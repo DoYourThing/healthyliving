@@ -276,7 +276,25 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider, $locat
     templateUrl: 'stress/environment.html',
   });  
 
+  $stateProvider.state('quiz', {
+    url: '/quiz',
+    templateUrl: 'quiz/base.html',
+    controller: 'QuizController'
+  });
 
+  $stateProvider.state('quiz.landing', {
+    url: '/landing',
+    templateUrl: 'quiz/landing.html',
+  });
+
+  $stateProvider.state('quiz.question', {
+    url: '/:id',
+    templateUrl: "quiz/question.html",
+    onEnter: function($stateParams) {
+
+      console.log($stateParams.id);
+    }
+  });
 
   $urlRouterProvider.when('/self_care', '/self_care/landing');
   $urlRouterProvider.when('/self_care', '/self_care/landing');

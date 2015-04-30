@@ -40,7 +40,8 @@ angular.module("app").controller('SectionController', function($scope, $location
   };
 
   $scope.goto = function(path) {
-    console.log('GOTO: '+ProgressTracker.getCurrentPillar());
+    // console.log('GOTO: '+ProgressTracker.getCurrentPillar());
+    window.scrollTo(0, 0);
     //TODO - manage history - might take a refactor
   	$location.path(path);
   };

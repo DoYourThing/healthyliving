@@ -83,9 +83,9 @@ angular.module("app").factory('ProgressTracker', function($http) {
       var isCurrentCompleted = _pillars[_pillars.current] != null; //returns true if completed 
       var activeIndex = isCurrentCompleted ? currentIndex + 1 : currentIndex;
 
-      console.log('_pillars[_pillars.current] '+ _pillars[_pillars.current] +' is current completed: '+isCurrentCompleted);
-      console.log(pillarID+' '+currentIndex+'; _pillars.order.indexOf(pillarID): '+_pillars.order.indexOf(pillarID));
-      console.log('ACTIVE INDEX: '+activeIndex);
+      // console.log('_pillars[_pillars.current] '+ _pillars[_pillars.current] +' is current completed: '+isCurrentCompleted);
+      // console.log(pillarID+' '+currentIndex+'; _pillars.order.indexOf(pillarID): '+_pillars.order.indexOf(pillarID));
+      // console.log('ACTIVE INDEX: '+activeIndex);
       return _pillars.order.indexOf(pillarID) === activeIndex;
     },
 

@@ -1,0 +1,31 @@
+<section class="question-wrap">
+  <header>
+    <h1>Stress Quiz</h1>
+    <button ng-click="back()" class="back">BACK</a>
+    <!-- <a href="#" id="home-btn" class="home btn">HOME</a> -->
+  </header>
+  <div class="question">
+    <div class="question-mark">?</div>
+    <div class="crumb"><span>{{currentQuestionIndex}} / {{totalQuestions}}</span></div>
+    <span >{{question}}</span>
+  </div>
+  <div class="answers">
+    <div class="answer one" ng-class="{'active': isAnswerActive(1)}"  ng-click="one()">
+      <div class="circle">1</div>
+      <span>NEVER</span>
+    </div>
+    <div class="answer two" ng-class="{'active': isAnswerActive(2)}"  ng-click="two()">
+      <div class="circle">2</div>
+      <span>SOMETIMES</span>
+    </div>
+    <div class="answer three" ng-class="{'active': isAnswerActive(3)}"  ng-click="three()">
+      <div class="circle">3</div>
+      <span>FREQUENTLY</span>
+    </div>
+    <div class="answer four" ng-class="{'active': isAnswerActive(4)}"  ng-click="four()">
+      <div class="circle">4</div>
+      <span>ALWAYS</span>
+    </div>
+  </div>
+  current score: {{score}}
+</section>

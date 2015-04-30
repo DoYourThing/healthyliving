@@ -21,6 +21,17 @@ html, body{
     overflow-y: scroll;
     background-size: cover;
     background-position: center;
+
+    @media @smartphones {
+      left: 0;
+      overflow: auto;
+      top: 0;
+      position: relative;
+      height: auto;
+      min-height: 100vh;
+      width: 100vw;
+      margin: 0;
+    }
   }
 
   button {
