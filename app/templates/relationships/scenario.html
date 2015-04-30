@@ -1,0 +1,22 @@
+<section class="scenario">
+	<header>
+		<h1>Relationships</h1>
+		<button ng-click="back('/relationships/landing')" class="back">BACK</a>
+		<!-- <a href="#" id="home-btn" class="home btn">HOME</a> -->
+	</header>
+	<div class="question">
+		<div class="question-mark">?</div>
+		<span>Your best friend from high school is planning a visit on the weekend, but your new friends from College have invited you to hang with them.</span>
+	</div>
+	<div class="answers">
+		<div ng-click="yes('/relationships/negative-outcome')"  class="answer yes">
+			<button class="yes circle">Yes</button>
+			<span>"I'm going to hang with my old friend, I miss them so much."</span>
+			
+		</div>
+		<div ng-click="no('/relationships/multi-choice')" class="answer no">
+			<button class="no circle">No</button>
+			<span>"I want to develop new these new friends. I always fell so homesick. seeing my old friends."</span>
+		</div>
+	</div>
+</section>

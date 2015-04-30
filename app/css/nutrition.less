@@ -1,0 +1,115 @@
+/* ==========================================================================
+   NUTRITION OVERRIDES
+   ========================================================================== */
+
+/* 
+* wherever @accent is listed, we override it with @nutrition-accent
+*/
+#nutrition {
+  @accent:  @nutrition-accent;
+  
+  header {
+  
+    h1{ 
+      background-color: @accent;
+    }
+  } 
+  
+  .landing {
+    background-image: url('@{images}/nutrition/landing-bg.jpg');
+  }
+  
+  .scenario { 
+    background-image: url("@{images}/nutrition/scenario-bg.jpg"); 
+    
+    .question { 
+   
+        .question-mark {    
+          background-color: @accent;
+      }
+    }
+
+    .answer {     
+      
+      &:hover {
+        
+        span { color: @accent }
+        
+        button.circle {
+          background-color: @accent;
+          color: #fff;
+        }
+      }
+    }   
+  }
+
+  .multi-choice {
+    background-image: url('@{images}/nutrition/landing-bg.jpg');
+  
+    .choices {
+    
+      li {
+
+        button {
+          color: @accent;
+
+          &:hover {
+            background-color: @accent;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+  .info {
+    background-image: url('@{images}/nutrition/landing-bg.jpg');
+
+    &.buy-local-and-in-season { background-image: url('@{images}/nutrition/buy-local-and-in-season-bg.jpg'); } 
+    &.cook  { background-image: url('@{images}/nutrition/cook-bg.jpg'); }
+    &.do-it-yourself  { background-image: url('@{images}/nutrition/do-it-yourself-bg.jpg'); }
+    &.plan-ahead  { background-image: url('@{images}/nutrition/plan-ahead-bg.jpg'); }
+    
+    button {
+      &.circle {
+        &.good-job {          
+          background-color: @accent;
+          color: #ffffff;
+        
+          &:hover {
+            color: @accent;
+            background-color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+  .negative-outcome {
+    background-image: url('@{images}/nutrition/landing-bg.jpg');
+    button {
+      &.circle {
+        &.good-job {          
+          background-color: @accent;
+          color: #ffffff;
+        
+          &:hover {
+            color: @accent;
+            background-color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+
+  button {
+    color: @accent;
+
+    &:hover {
+      background-color: @accent;
+      color: #ffffff;
+    }
+  }
+
+}

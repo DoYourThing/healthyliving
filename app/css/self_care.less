@@ -1,0 +1,114 @@
+/* ==========================================================================
+   SELF-CARE OVERRIDES
+   ========================================================================== */
+
+/* 
+* wherever @accent is listed, we override it with @self_care-accent
+*/
+#self_care {
+  @accent:  @self_care-accent;
+  
+  header {
+  
+    h1{ 
+      background-color: @accent;
+    }
+  } 
+  
+  .landing {
+    background-image: url('@{images}/self_care/landing-bg.jpg');
+
+  }
+  
+  .scenario { 
+    background-image: url("@{images}/self_care/scenario-bg.jpg"); 
+  
+    .question { 
+   
+        .question-mark {    
+          background-color: @accent;
+      }
+    }
+
+    .answer {     
+      
+      &:hover {
+        
+        span { color: @accent }
+        
+        button.circle {
+          background-color: @accent;
+          color: #fff;
+        }
+      }
+    }   
+  }
+
+  .multi-choice {
+    background-image: url('@{images}/self_care/multi-choice-bg.jpg');
+ 
+    .choices {
+    
+      li {
+
+        button {
+          color: @accent;
+
+          &:hover {
+            background-color: @accent;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+  .info {
+    background-image: url('@{images}/self_care/landing-bg.jpg');
+    &.nutrition  { background-image: url('@{images}/self_care/nutrition-bg.jpg'); }
+    &.reward  { background-image: url('@{images}/self_care/reward-bg.jpg'); }
+    &.sleep  { background-image: url('@{images}/self_care/sleep-bg.jpg'); }
+
+    button {
+      &.circle {
+        &.good-job {          
+          background-color: @accent;
+          color: #ffffff;
+        
+          &:hover {
+            color: @accent;
+            background-color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+  .negative-outcome {
+    background-image: url('@{images}/self_care/negative-outcome-bg.jpg');
+    button {
+      &.circle {
+        &.good-job {          
+          background-color: @accent;
+          color: #ffffff;
+        
+          &:hover {
+            color: @accent;
+            background-color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+
+  button {
+    color: @accent;
+
+    &:hover {
+      background-color: @accent;
+      color: #ffffff;
+    }
+  }
+
+}

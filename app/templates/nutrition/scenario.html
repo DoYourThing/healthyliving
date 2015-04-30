@@ -1,0 +1,23 @@
+<section class="scenario">
+	<header>
+		<h1>Nutrition</h1>
+		<button ng-click="back('/nutrition/landing')" class="back">BACK</a>
+		<!-- <a href="#" id="home-btn" class="home btn">HOME</a> -->
+	</header>
+	<div class="question">
+		<div class="question-mark">?</div>
+		<span >A friend has offered to drive you to a bulk food store where it is cheaper and
+you can split the bill and the groceries with them.</span>
+	</div>
+	<div class="answers">
+		<div  ng-click="yes('/nutrition/multi-choice')" class="answer yes">
+			<button class="yes circle">Yes</button>
+			<span>"That sounds like a plan."</span>
+			
+		</div>
+		<div ng-click="no('/nutrition/negative-outcome')" class="answer no">
+			<button class="no circle">No</button>
+			<span>"There is a fast food place across from where I live that is cheap."</span>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,115 @@
+/* ==========================================================================
+   CULTURAL ADJUSTMENT OVERRIDES
+   ========================================================================== */
+
+/* 
+* wherever @accent is listed, we override it with @ca-accent
+*/
+#cultural_adjustment {
+  @accent:  @ca-accent;
+  
+  header {
+  
+    h1{ 
+      background-color: @accent;
+    }
+  } 
+  
+  .landing {
+    background-image: url('@{images}/ca-landing-bg.jpg');
+  }
+  
+  .scenario { 
+    background-image: url("@{images}/scenario-bg.jpg"); 
+  
+    .question { 
+   
+        .question-mark {    
+          background-color: @accent;
+      }
+    }
+
+    .answer {     
+      
+      &:hover {
+        
+        span { color: @accent }
+        
+        button.circle {
+          color: #fff;
+          background-color: @accent;
+        }
+      }
+    }   
+  }
+
+  .multi-choice {
+    background-image: url('@{images}/ca-landing-bg.jpg');
+ 
+    .choices {
+    
+      li {
+
+        button {
+          color: @accent;
+
+          &:hover {
+            background-color: @accent;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+  .info {
+    background-image: url('@{images}/cultural_adjustment/landing-bg.jpg');
+    button {
+      &.circle {
+        &.good-job {          
+          background-color: @accent;
+          color: #ffffff;
+        
+          &:hover {
+            color: @accent;
+            background-color: #ffffff;
+          }
+        }
+      }
+    }
+
+//    &.adjusting-to-changes-in-diet-and-activity { background-image: '@{images}/cultural_adjustment/adjusting-to-changes-in-diet-and-activity-bg.jpg'; }
+    &.coping-with-tests-and-exams { background-image: url('@{images}/cultural_adjustment/coping-with-tests-and-exams-bg.jpg'); }
+    &.dealing-with-homesickness { background-image: url('@{images}/cultural_adjustment/dealing-with-homesickness-bg.jpg'); }
+    &.establishing-a-support-system { background-image: url('@{images}/cultural_adjustment/establishing-a-support-system-bg.jpg'); }
+    &.making-new-friends { background-image: url('@{images}/cultural_adjustment/making-new-friends-bg.jpg'); }
+  }
+
+  .negative-outcome {
+    background-image: url('@{images}/ca-landing-bg.jpg');
+    button {
+      &.circle {
+        &.good-job {          
+          background-color: @accent;
+          color: #ffffff;
+        
+          &:hover {
+            color: @accent;
+            background-color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+
+  button {
+    color: @accent;
+
+    &:hover {
+      background-color: @accent;
+      color: #ffffff;
+    }
+  }
+
+}

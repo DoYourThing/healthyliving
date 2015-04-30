@@ -1,0 +1,64 @@
+/* ==========================================================================
+   MULTI-CHOICE PAGE
+   ========================================================================== */
+.multi-choice {
+  
+  header {
+    
+    h1 {
+
+      @media @smartphones {
+        font-size: 2.65em;
+      }
+    }
+  }
+  .description {
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+
+    span {
+      font-size: 1em;
+    }
+  }
+  
+  .choices-wrap {
+    display: table;
+    margin: 20px auto;
+
+    ul.choices {
+      width: auto;
+      margin: auto;
+      padding: 0;
+      overflow: hidden;
+      list-style: none;
+
+      li {
+        list-style: none;
+        float: left;
+        width: auto;      
+        width: 17%;
+        /* clear: inherit; */      
+        display: table;
+        margin-left: 10px;
+
+        @media @smartphones {
+          float: none;
+        }
+
+        button {
+          color: @accent;
+          font-family: @sans;                 
+          font-size: 1em;
+          line-height: 1.2em;
+          width: 9em;
+          height: 9em;
+
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,184 @@
+/* ==========================================================================
+   BASE/GLOBAL STYLES
+   ========================================================================== */
+
+html, body{
+  font-family: @sans;
+  height: 100%;
+  width: 100%;
+
+  *:focus, *:hover {
+    outline: none;
+  }
+
+  section {
+    // min-height: 600px;
+    // min-width: 900px;
+    height: ~"calc(100vh - 40px)";
+    width: ~"calc(100vw - 40px)";  
+    position: fixed;
+    margin: 20px;
+    overflow-y: scroll;
+    background-size: cover;
+    background-position: center;
+  }
+
+  button {
+    color: #000000;
+    padding: 10px;
+    background-color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1.8em;
+    letter-spacing: .15em;
+    display: inline-block;
+    font-weight: 800;
+    border: none;
+    margin-bottom: 0px; 
+   
+   
+    -webkit-transition: all 150ms ease-out;
+    -moz-transition: all 150ms ease-out;
+    -o-transition: all 150ms ease-out;
+    transition: all 150ms ease-out;
+    
+    &.circle {
+      width: 2.25em;
+      height: 2.25em;
+      border-radius: 50%;
+      background-color: #ffffff;
+      font-size: 4em;
+      line-height: 2.25em;
+      line-height: 1.25em;
+      text-align: center;
+      font-family: 'Abril Fatface', cursive;
+      cursor: pointer;
+      border: none;
+      display: block;
+      margin: 20px auto;
+      letter-spacing: 0;
+
+      @media @smartphones, @tablets { font-size: 3em; }
+
+      .yes { margin-bottom: .795em; }
+
+      &:hover {
+        -webkit-transition: all 0ms ease-out;
+        -moz-transition: all 0ms ease-out;
+        -o-transition: all 0ms ease-out;
+        transition: all 0ms ease-out; 
+
+      }
+
+      &.next {    
+        font-size: 2.5em;
+        width: 3.25em;
+        height: 3.25em;
+      }
+
+      &.good-job {    
+        font-size: 2.5em;
+        width: 3.25em;
+        height: 3.25em;
+        background-color: @accent;
+        color: #ffffff;
+        line-height: 1em;
+        
+        &:hover {
+          color: @accent;
+          background-color: #ffffff;
+        }
+      }
+    } 
+
+
+    &:hover {
+      color: #ffffff;
+      background-color: #000000;
+    }
+  }
+
+  span {
+    background-color: #ffffff;    
+    
+    &.bold {
+      font-weight: 800 !important;
+    }
+  }
+ 
+  header {
+    overflow: hidden;
+
+    h1 {
+      font-family: 'Abril Fatface', cursive;
+      background-color: #fb6007;
+      font-size: 3.75em;
+      display: inline-block;
+      padding: .15em .25em .05em .75em;
+      letter-spacing: -.035em;
+      float: left;
+      margin: 0;
+
+      @media @smartphones, @tablets {
+        text-align: left;
+        padding: .15em .25em .3em .25em;
+        line-height: .95em;
+        font-size: 3.5em;
+      }
+    }
+
+    button.back {
+      float: left;
+      clear: left;
+      
+      @media @smartphones, @tablets {
+        font-size: 0.8em;
+      }
+    }
+   
+    button.home { float: right; }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+//OLD - unused for now
+#fitness-lifestyles {       
+  background: url("@{images}/fitness-lifestyles-placehold-bg.jpg") no-repeat center;
+  background-size: 100%;
+}
+
+#yoga-benefits {        
+  background: url("@{images}/benefits-placehold-bg.jpg") no-repeat center;
+  background-size: 100%;
+}
+
+#yoga {
+  background-color: #ffffff;
+  display: inline-block;
+  font-size: 39px;
+  font-family: 'Abril Fatface', cursive;
+  padding: 6px 6px 6px 25px;
+  position: absolute;
+  top: 79%;
+  left: 38.5%;
+  cursor: pointer;
+} 
+
+#yoga:hover {         
+  color: #fb6007;
+}
+
+#continue-btn {
+  position: absolute;
+  right: 0;
+  bottom: 20px;       
+}

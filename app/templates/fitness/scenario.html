@@ -1,0 +1,23 @@
+<section class="scenario">
+	<header>
+		<h1>Fitness</h1>
+		<button ng-click="back('/fitness/landing')" class="back">BACK</a>
+		<!-- <a href="#" id="home-btn" class="home btn">HOME</a> -->
+	</header>
+	<div class="question">
+		<div class="question-mark">?</div>
+		<span class="small">A friend texts you.</span> 
+		<span>"Hey, wanna go exercise?"</span>
+	</div>
+	<div class="answers">
+		<div ng-click="yes('/fitness/multi-choice')" class="answer yes">
+			<button  class="yes circle">Yes</button>
+			<span>"That sounds like a plan."</span>
+			
+		</div>
+		<div  ng-click="no('/fitness/negative-outcome')" class="answer no">
+			<button class="no circle">No</button>
+			<span>"There is a fast food place across from where I live that is cheap."</span>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,30 @@
+<section class="multi-choice">
+  <header>
+    <h1>Self Care</h1>
+    <button ng-click="back('/self_care/scenario')" class="back">BACK</a>
+    <!-- <a href="#" id="home-btn" class="home btn">HOME</a> -->
+  </header>
+  
+  <div class="description">
+    <span>It's important to take care of your own needs, in the long run you will be a healthier person for it and you will be better at balancing the many aspects of student life. Tips for finding balance:</span>
+  </div>
+  <div class="choices-wrap">
+    <ul class="choices">
+      <li>
+        <button ng-click="goto('/self_care/physical-activity')" class="circle">Physical activity</button>
+      </li>
+      <li>
+        <button ng-click="goto('/self_care/nutrition')" class="circle">Nutrition</button>
+      </li>
+      <li>
+        <button ng-click="goto('/self_care/sleep')" class="circle">Make sleep a priority</button>
+      </li>
+      <li>      
+        <button ng-click="goto('/self_care/reward')" class="circle">Reward yourself!</button>
+      </li>
+      <li>
+        <button ng-click="goto('/self_care/dont-panic')" class="circle">Don't Panic!</button>
+      </li>
+    </ul>
+  </div>
+</section>

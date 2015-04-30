@@ -1,0 +1,22 @@
+<section class="scenario">
+	<header>
+		<h1>Self Care</h1>
+		<button ng-click="back('/self_care/landing')" class="back">BACK</a>
+		<!-- <a href="#" id="home-btn" class="home btn">HOME</a> -->
+	</header>
+	<div class="question">
+		<div class="question-mark">?</div>
+		<span>You feel run down and tired. It's been a busy week at school and you have been picking up extra shifts at your job. But there is a party tonight that you have been really looking forward to.</span>
+	</div>
+	<div class="answers">
+		<div  ng-click="yes('/self_care/negative-outcome')" class="answer yes">
+			<button class="yes circle">Yes</button>
+			<span>"I am going to the party. I deserve the treat, it's been a rough week."</span>
+			
+		</div>
+		<div ng-click="no('/self_care/multi-choice')" class="answer no">
+			<button class="no circle">No</button>
+			<span>"I am going to stay home and get an early night so I can focus on studying in the morning."</span>
+		</div>
+	</div>
+</section>

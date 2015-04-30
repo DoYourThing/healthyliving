@@ -1,0 +1,125 @@
+/* ==========================================================================
+   SCENARIO PAGE
+   ========================================================================== */
+.scenario {  
+  span {
+    clear: both;  
+    font-size: 2em;
+    line-height: 1.505em;
+    font-weight: 400;
+    padding: .2em 0.5em 0.2em 0.5em;
+    width: 100%;
+    
+
+    @media @smartphones, @tablets { font-size: 1.5em; }
+    
+    &.small { font-size: 1.5em; }
+  }
+
+  .question { 
+    position: relative;   
+    width: 50%;
+    margin: auto;
+    
+    @media @smartphones, @tablets {
+      margin-top: 2em;
+      padding-left: 4em;
+      width: 74%;
+    }
+    
+    .question-mark {  
+      width: 1em;
+      height: 1em;
+      background-color: @accent;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 1em;
+      font-size: 4em;     
+      position: absolute;
+      margin-left: -1.25em;
+      clear: both;
+
+      @media @smartphones, @tablets {
+        font-size: 3em;
+        margin-left: -1.25em;
+      }
+    }
+  }
+  .answers {
+    position: relative;   
+    width: 80%;
+    margin: auto;
+
+    @media @smartphones, @tablets {
+      position: relative;
+      bottom: 0;
+    }
+
+    .answer {
+      float: left;      
+      width: 40%;
+      cursor: pointer;
+      &.no {
+        margin-left: 10%;
+
+        @media @smartphones, @tablets {
+          float: right;
+          text-align: right;
+          margin-left: 0;
+        }
+      }
+
+      button.circle {
+        -webkit-transition: all 150ms ease-out;
+        -moz-transition: all 150ms ease-out;
+        -o-transition: all 150ms ease-out;
+        transition: all 150ms ease-out;        
+      }
+
+      span{      
+        font-size: 1.5em;
+        font-weight: 200;
+        padding: .1em .35em;
+        -webkit-transition: all 150ms ease-out;
+        -moz-transition: all 150ms ease-out;
+        -o-transition: all 150ms ease-out;
+        transition: all 150ms ease-out;  
+
+        width: auto;
+        line-height: 1.35em;
+
+        @media @smartphones, @tablets {
+          font-size: 1.2em;
+          line-height: 1.25em;
+        }
+      }
+           
+      &:hover {
+        
+        span { 
+          color: @accent;
+          
+
+          -webkit-transition: all 0ms ease-out;
+          -moz-transition: all 0ms ease-out;
+          -o-transition: all 0ms ease-out;
+          transition: all 0ms ease-out;         
+        }
+        
+        button.circle {
+          background-color: @accent;
+          color: #ffffff;
+          -webkit-transition: all 0ms ease-out;
+          -moz-transition: all 0ms ease-out;
+          -o-transition: all 0ms ease-out;
+          transition: all 0ms ease-out; 
+        }
+      }
+
+      
+    }   
+  }
+}
+
+
+

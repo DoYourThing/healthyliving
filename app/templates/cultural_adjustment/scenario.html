@@ -1,0 +1,22 @@
+<section class="scenario">
+	<header>
+		<h1>Cultural Adjustment</h1>
+		<button ng-click="back('/cultural_adjustment/landing')" class="back">BACK</a>
+		<!-- <a href="#" id="home-btn" class="home btn">HOME</a> -->
+	</header>
+	<div class="question">
+		<div class="question-mark">?</div>
+		<span >You are feeling homesick your roommate suggests visiting Student Services.</span>
+	</div>
+	<div class="answers">
+		<div ng-click="yes('/cultural_adjustment/multi-choice')" class="answer yes">
+			<button  class="yes circle">Yes</button>
+			<span>"Maybe they can suggest ways to cope"</span>
+			
+		</div>
+		<div ng-click="no('/cultural_adjustment/negative-outcome')"  class="answer no">
+			<button class="no circle">No</button>
+			<span>"I feel too sad to interact with people right now."</span>
+		</div>
+	</div>
+</section>

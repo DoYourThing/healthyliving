@@ -1,0 +1,114 @@
+/* ==========================================================================
+   RELATIONSHIPS OVERRIDES
+   ========================================================================== */
+
+/* 
+* wherever @accent is listed, we override it with @relationships-accent
+*/
+#relationships {
+  @accent:  @relationships-accent;
+  
+  header {
+  
+    h1{ 
+      background-color: @accent;
+    }
+  } 
+  
+  .landing {
+    background-image: url('@{images}/relationships/landing-bg.jpg');
+  }
+  
+  .scenario {     
+    background-image: url('@{images}/relationships/scenario-bg.jpg');
+  
+    .question { 
+   
+        .question-mark {    
+          background-color: @accent;
+      }
+    }
+
+    .answer {     
+      
+      &:hover {
+        
+        span { color: @accent }
+        
+        button.circle {
+          color: #fff;
+          background-color: @accent;
+        }
+      }
+    }   
+  }
+
+  .multi-choice {    
+    background-image: url('@{images}/relationships/landing-bg.jpg');
+    .choices {
+    
+      li {
+
+        button {
+          color: @accent;
+
+          &:hover {
+            background-color: @accent;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+  .info {
+    background-image: url('@{images}/relationships/landing-bg.jpg');
+
+    &.connected { background-image: url('@{images}/relationships/connected-bg.jpg'); }
+    &.establishing { background-image: url('@{images}/relationships/establishing-bg.jpg'); }
+    &.healthy { background-image: url('@{images}/relationships/healthy-bg.jpg'); }
+    &.tips { background-image: url('@{images}/relationships/tips-bg.jpg'); }
+
+    button {
+      &.circle {
+        &.good-job {          
+          background-color: @accent;
+          color: #ffffff;
+        
+          &:hover {
+            color: @accent;
+            background-color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+  .negative-outcome {
+    background-image: url('@{images}/relationships/negative-outcome-bg.jpg');
+    button {
+      &.circle {
+        &.good-job {          
+          background-color: @accent;
+          color: #ffffff;
+        
+          &:hover {
+            color: @accent;
+            background-color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+
+  button {
+    color: @accent;
+
+    &:hover {
+      background-color: @accent;
+      color: #ffffff;
+    }
+  }
+
+}

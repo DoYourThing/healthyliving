@@ -1,0 +1,132 @@
+/* ==========================================================================
+   FITNESS OVERRIDES
+   ========================================================================== */
+
+/* 
+* wherever @accent is listed, we override it with @fitness-accent
+*/
+#fitness {
+  @accent:  @fitness-accent;
+  
+  header {
+  
+    h1{ 
+      background-color: @accent;
+    }
+  } 
+  
+  .landing {
+    background-image: url('@{images}/fitness/landing-bg.jpg');
+  }
+  
+  .scenario { 
+    background-image: url("@{images}/fitness/scenario-bg.jpg"); 
+  
+    .question {         
+        width: 463px;
+        max-width: 100%;
+        
+        @media @smartphones {
+          width: 193px;
+        }
+        
+        span {
+          width: auto;
+          clear: both;
+          display: inline-block;
+        }
+        
+        .question-mark {    
+          background-color: @accent;
+        }
+    }
+
+    .answer {     
+      
+      &.yes {
+        text-align: center;
+      }
+
+      &:hover {
+        
+        span { color: @accent }
+        
+        button.circle {
+          color: #fff;
+          background-color: @accent;
+        }
+      }
+    }   
+  }
+
+  .multi-choice {
+    background-image: url('@{images}/fitness/landing-bg.jpg');
+ 
+    .choices {
+    
+      li {
+
+        button {
+          color: @accent;
+
+          &:hover {
+            background-color: @accent;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+  .info {
+    background-image: url('@{images}/fitness/landing-bg.jpg');
+
+    // &.home-exercise { background-image: '@{images}/fitness/home-exercise-bg.jpg'; }
+    // &.join-a-gym { background-image: '@{images}/fitness/join-a-gym-bg.jpg'; }
+    // &.join-a-recreation-league { background-image: '@{images}/fitness/join-a-recreation-league-bg.jpg'; }
+    // &.run { background-image: '@{images}/fitness/run.jpg'; }
+    // &.walk-bike { background-image: '@{images}/fitness/walk-bike.jpg'; }
+
+    button {
+      &.circle {
+        &.good-job {          
+          background-color: @accent;
+          color: #ffffff;
+        
+          &:hover {
+            color: @accent;
+            background-color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+  .negative-outcome {
+    background-image: url('@{images}/ca-landing-bg.jpg');
+    button {
+      &.circle {
+        &.good-job {          
+          background-color: @accent;
+          color: #ffffff;
+        
+          &:hover {
+            color: @accent;
+            background-color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+
+  button {
+    color: @accent;
+
+    &:hover {
+      background-color: @accent;
+      color: #ffffff;
+    }
+  }
+
+}

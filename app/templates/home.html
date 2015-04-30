@@ -1,0 +1,44 @@
+<section id="home">
+      <header>
+        <h1 id="heading">Healthy Living &amp; Student Life</h1>
+        <div class="logo">
+          <a href="http://www.algonquincollege.com" target="_blank"><img src="img/algonquin-college-logo@2x.png"></a>
+        </div>
+      </header>
+      <nav id="pillars">
+        <div class="pillar left cultural_adjustment" ng-class="{'completed': pillars.cultural_adjustment, 'active': isPillarActive('cultural_adjustment')}" ng-click="gotoPillar('cultural_adjustment')">         
+          <div class="circle ">C/A</div>
+          <span>CULTURAL</span>
+          <span>ADJUSTMENT</span>
+        </div>
+        <div class="pillar nutrition" ng-class="{'completed': pillars.nutrition, 'active': isPillarActive('nutrition')}" ng-click="gotoPillar('nutrition')">        
+          <div class="circle">N</div>
+          <span>NUTRITION</span>
+        </div>
+        <div class="pillar fitness" ng-class="{'completed': pillars.fitness, 'active': isPillarActive('fitness')}"  ng-click="gotoPillar('fitness')">
+          <div class="circle">F</div>
+          <span>FITNESS</span>
+        </div>
+        <div class="pillar relationships" ng-class="{'completed': pillars.relationships, 'active': isPillarActive('relationships')}" ng-click="gotoPillar('relationships')">          
+          <div class="circle">R</div>
+          <span>RELATIONSHIPS</span>
+        </div>
+        <div class="pillar stress" ng-class="{'completed': pillars.stress, 'active': isPillarActive('stress')}" ng-click="gotoPillar('stress')">
+          <div class="circle">S</div>
+          <span>STRESS</span>
+        </div>
+        <div class="pillar self_care" ng-class="{'completed': pillars.self_care, 'active': isPillarActive('self_care')}" ng-click="gotoPillar('self_care')">
+          <div class="circle">S/C</div>
+          <span>SELF CARE</span>
+        </div>
+      </nav>
+
+      <footer>
+        <div id="status-bar" class={{currentPillarID}} > 
+          <div class="bg"></div>        
+          <div class="fg" ng-style="fgWidth"></div>          
+          <div class="percentage"  ng-style="percentageLeft">{{percentComplete}}%</div>
+        </div>
+      </footer>
+
+    </section>

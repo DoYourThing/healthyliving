@@ -1,0 +1,22 @@
+<section class="scenario">
+	<header>
+		<h1>Stress</h1>
+		<button ng-click="back('/stress/landing')" class="back">BACK</a>
+		<!-- <a href="#" id="home-btn" class="home btn">HOME</a> -->
+	</header>
+	<div class="question">
+		<div class="question-mark">?</div>
+		<span >You mother is concerned that you are too stressed with school and should
+look at ways of coping better.</span>
+	</div>
+	<div class="answers">
+		<div ng-click="yes('/stress/multi-choice')" class="answer yes">
+			<button  class="yes circle">Yes</button>
+			<span>"Moms always know best, I am not arguing with her!"</span>			
+		</div>
+		<div ng-click="no('/stress/negative-outcome')" class="answer no">
+			<button class="no circle">No</button>
+			<span>"I am fine, pass me another coffee."</span>
+		</div>
+	</div>
+</section>
