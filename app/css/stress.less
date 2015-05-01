@@ -88,16 +88,22 @@
 
   .negative-outcome {
     background-image: url('@{images}/stress/negative-outcome-bg.jpg');
+    h3 {
+      font-size: 2em;
+      text-align: center;
+    }
     button {
       &.circle {
-        &.good-job {          
-          background-color: @accent;
-          color: #ffffff;
-        
-          &:hover {
-            color: @accent;
-            background-color: #ffffff;
-          }
+        font-size: 2em;
+        line-height: 1em;
+        width: 4em;
+        height: 4em;
+        background-color: @accent;
+        color: #ffffff;
+  
+        &:hover {
+          color: @accent;
+          background-color: #ffffff;        
         }
       }
     }

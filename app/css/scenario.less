@@ -59,6 +59,8 @@
       float: left;      
       width: 40%;
       cursor: pointer;
+      
+
       &.no {
         margin-left: 10%;
 
@@ -91,6 +93,17 @@
         @media @smartphones, @tablets {
           font-size: 1.2em;
           line-height: 1.25em;
+        }
+      }
+
+      @media @iphone5 {
+        span {
+          font-size: 1em;
+        }
+        button.circle {
+          -ms-transform: scale(.75);
+          -webkit-transform: scale(.75);
+          transform: scale(.75);
         }
       }
            

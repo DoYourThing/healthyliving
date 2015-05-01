@@ -3,7 +3,77 @@
    ========================================================================== */
 #quiz {
   @accent:  @stress-accent;
-  
+  @yellow: #e9ff2b;
+  @orange: #ff712b;
+  @red: #ff2b30;
+
+  .result-text {
+    position: relative;   
+    width: 50%;
+    margin: auto;
+    margin-top: 3em;
+    
+    h3 {
+      span{
+        font-weight: bold;
+        font-size: 1em;
+      }
+    }
+
+    .emoticon {  
+      width: 1em;
+      height: 1em;
+      background-color: @accent;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 1em;
+      font-size: 4em;     
+      position: absolute;
+      margin-left: -1.25em;
+      clear: both;
+      display: block;
+      background-position: -7px -6px;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: -1px 0px;
+
+
+      &.serious {
+        background-image: url('@{images}/quiz/emoticon-serious.png');
+        background-color: @yellow;
+      }
+      &.meh {
+        background-image: url('@{images}/quiz/emoticon-meh.png');
+        background-color: @orange;
+      }
+      &.happy {
+        background-image: url('@{images}/quiz/emoticon-happy.png');
+      }
+      &.sad {
+        background-image: url('@{images}/quiz/emoticon-sad.png');
+        background-color: @red;
+      }
+
+      @media @smartphones, @tablets {
+        font-size: 3em;
+        margin-left: -1.25em;
+      }
+    }
+
+    .score { 
+      position: relative;   
+      width: 50%;
+      margin: auto;
+      
+      @media @smartphones, @tablets {
+        margin-top: 2em;
+        padding-left: 4em;
+        width: 74%;
+      }
+      
+
+    }
+  }
   header {
   
     h1{ 
@@ -25,7 +95,7 @@
     padding: .2em 0.5em 0.2em 0.5em;
     width: 100%;
     
-
+    
     @media @smartphones, @tablets { font-size: 1.5em; }
     
     &.small { font-size: 1.5em; }
@@ -148,9 +218,7 @@
         line-height: 18px;
       }
      
-      @yellow: #e9ff2b;
-      @orange: #ff712b;
-      @red: #ff2b30;
+     
 
       .circle {
         font-family: 'Abril Fatface', cursive;
@@ -219,8 +287,6 @@
           background-color: #000000;
         }
       }
-
-      
     }   
   }
 }

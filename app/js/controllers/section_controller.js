@@ -45,4 +45,26 @@ angular.module("app").controller('SectionController', function($scope, $location
     //TODO - manage history - might take a refactor
   	$location.path(path);
   };
+
+
+  $scope.pillars = ProgressTracker.getPillars();
+  $scope.isPillarActive = ProgressTracker.isPillarActive;
+  
+  $scope.percentComplete = ProgressTracker.getPercentComplete();
+
+  $scope.fgWidth = {width:$scope.percentComplete+'%'};
+  $scope.percentageLeft = {left:'calc('+$scope.percentComplete+'% + 5px)'};
+
+  $scope.currentPillarID = $scope.pillars.current;
+  
+  $scope.gotoPillar = function(pillarID) {
+    
+    if(ProgressTracker.isPillarActive(pillarID))
+    {
+      ProgressTracker.setCurrentPillar(pillarID);
+      $location.path(pillarID);
+    }
+    
+  };
+  
 });

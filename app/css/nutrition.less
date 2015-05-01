@@ -66,12 +66,21 @@
     background-image: url('@{images}/nutrition/landing-bg.jpg');
 
     &.buy-local-and-in-season { background-image: url('@{images}/nutrition/buy-local-and-in-season-bg.jpg'); } 
-    &.cook  { background-image: url('@{images}/nutrition/cook-bg.jpg'); }
+
+    &.cook  { 
+      background-image: url('@{images}/nutrition/cook-bg.jpg'); 
+
+      @media @smartphones { background-image: url('@{images}/nutrition/mobile/cook-bg.jpg'); }    
+    }
+    
     &.do-it-yourself  { background-image: url('@{images}/nutrition/do-it-yourself-bg.jpg'); }
+    
     &.plan-ahead  { background-image: url('@{images}/nutrition/plan-ahead-bg.jpg'); }
     
     button {
+      
       &.circle {
+      
         &.good-job {          
           background-color: @accent;
           color: #ffffff;

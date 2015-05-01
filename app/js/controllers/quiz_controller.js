@@ -24,12 +24,12 @@ angular.module("app").controller('QuizController', function($scope, $location, $
  
   //$scope.currentQuestionIndex = QuizResource.getCurrentQuestionIndex();
   $scope.$on('$stateChangeSuccess', function() {
-    $scope.totalQuestions = $scope.questions.length;
-    console.log('current id: '+$state.params.id);
+    
+    $scope.totalQuestions = $scope.questions.length;    
     $scope.currentQuestionIndex = parseFloat($state.params.id);
     $scope.question = $scope.questions[$scope.currentQuestionIndex];
-    $scope.score = QuizTracker.getScore();
-    console.log('score: '+$scope.score);
+    $scope.score = QuizTracker.getScore();    
+  
   });
 
   var onLogoutSuccess = function(response) {
@@ -37,45 +37,43 @@ angular.module("app").controller('QuizController', function($scope, $location, $
   };
 
   $scope.back = function() {
+    
     var prevID = $scope.currentQuestionIndex - 1;
+    
     if(prevID <= 0) {
       $state.go('quiz.landing');
     } else {
-
       $state.go('quiz.question', {id: prevID});  
     }
+
   };
 
   $scope.next = function() {
+    
     var nextID = $scope.currentQuestionIndex + 1;
+    
     if(nextID >= $scope.totalQuestions) {
-      $state.go('quiz.finish');
+      $state.go('quiz.result');
     } else {
-      console.log('going to question: '+nextID);
       $state.go('quiz.question', {id: nextID});  
     }
+
   };
 
   $scope.one = function() {
     $scope.answer(1);
   }; 
   
-  $scope.two = function(path) {
+  $scope.two = function() {
     $scope.answer(2);
-  	// TODO - ignore path, be dynamic  	
-  	$scope.goto(path);
   };
 
-  $scope.three = function(path) {
-    $scope.answer(3);
-  	// TODO - ignore path, be dynamic  	
-  	$scope.goto(path);
+  $scope.three = function() {
+    $scope.answer(3);  
   };
 
-  $scope.four = function(path) {
+  $scope.four = function() {
     $scope.answer(4);
-  	// TODO - ignore path, be dynamic  	
-  	$scope.goto(path);
   };
   
   $scope.answer = function(answer) {

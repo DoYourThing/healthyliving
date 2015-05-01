@@ -16,7 +16,7 @@
     width: 80%;
     margin: auto;
     margin-top: 50px;
-
+    // text-align: center;
     span {
       font-size: 1em;
     }
@@ -25,27 +25,54 @@
   .choices-wrap {
     display: table;
     margin: 20px auto;
-
+    //width: 80%;
+    @smartphones {
+      width: 100%;
+    }
     ul.choices {
       width: auto;
       margin: auto;
       padding: 0;
       overflow: hidden;
       list-style: none;
+      &.five {
+        li {
+          //width: 20%;
+        }
+      }
+      &.four {
+        width: 710px;
 
+        @media screen and (max-width: 800px){
+          width: 270px;
+          li {
+            margin-left: 5px;
+            margin-right: 5px;
+          }
+        }
+
+        li {
+         // width: 25%;
+
+         
+        }
+      }
+      &.six {
+        li {
+          //width: 16.6%;
+        }
+      }
       li {
         list-style: none;
         float: left;
         width: auto;      
-        width: 17%;
+        width: 15%;
         /* clear: inherit; */      
         display: table;
-        margin-left: 10px;
+        // margin-left: 10px;
 
-        @media @smartphones {
-          float: none;
-        }
-
+       
+        
         button {
           color: @accent;
           font-family: @sans;                 
@@ -53,11 +80,28 @@
           line-height: 1.2em;
           width: 9em;
           height: 9em;
+          margin-left: 5px;
+          margin-right: 5px;
 
           &:hover {
             color: #fff;
           }
         }
+
+        @media @smartphones {
+          width: 125px;
+          display: inline;
+          
+          height: 133px;
+          float: left;
+          transform: scale(.75);  
+          transform-origin: 0;
+          button {
+            
+            margin: 0;
+          }
+        }
+
       }
     }
   }

@@ -16,25 +16,35 @@
   } 
   
   .landing {
-    background-image: url('@{images}/ca-landing-bg.jpg');
+    background-image: url('@{images}/cultural_adjustment/landing-bg.jpg');   
+
+    @media @smartphones {
+      .description span{
+        font-size: 1em;
+      }
+    } 
   }
   
   .scenario { 
-    background-image: url("@{images}/scenario-bg.jpg"); 
+    background-image: url('@{images}/cultural_adjustment/landing-bg.jpg');
   
     .question { 
-   
+        @media @iphone5 {
+          span {
+            font-size: 1em;
+          }
+        }
         .question-mark {    
           background-color: @accent;
       }
     }
 
-    .answer {     
-      
+    .answer {           
+
       &:hover {
         
         span { color: @accent }
-        
+
         button.circle {
           color: #fff;
           background-color: @accent;
@@ -44,8 +54,8 @@
   }
 
   .multi-choice {
-    background-image: url('@{images}/ca-landing-bg.jpg');
- 
+    background-image: url('@{images}/cultural_adjustment/landing-bg.jpg');
+    
     .choices {
     
       li {
@@ -64,6 +74,7 @@
 
   .info {
     background-image: url('@{images}/cultural_adjustment/landing-bg.jpg');
+    
     button {
       &.circle {
         &.good-job {          
@@ -80,13 +91,23 @@
 
 //    &.adjusting-to-changes-in-diet-and-activity { background-image: '@{images}/cultural_adjustment/adjusting-to-changes-in-diet-and-activity-bg.jpg'; }
     &.coping-with-tests-and-exams { background-image: url('@{images}/cultural_adjustment/coping-with-tests-and-exams-bg.jpg'); }
-    &.dealing-with-homesickness { background-image: url('@{images}/cultural_adjustment/dealing-with-homesickness-bg.jpg'); }
+    &.dealing-with-homesickness { 
+      background-image: url('@{images}/cultural_adjustment/dealing-with-homesickness-bg.jpg'); 
+      @media @smartphones {
+        background-image: url('@{images}/cultural_adjustment/mobile/dealing-with-homesickness-bg.jpg'); 
+      }
+    }
     &.establishing-a-support-system { background-image: url('@{images}/cultural_adjustment/establishing-a-support-system-bg.jpg'); }
-    &.making-new-friends { background-image: url('@{images}/cultural_adjustment/making-new-friends-bg.jpg'); }
+    &.making-new-friends { 
+      background-image: url('@{images}/cultural_adjustment/making-new-friends-bg.jpg'); 
+      @media @smartphones {
+        background-image: url('@{images}/cultural_adjustment/mobile/making-new-friends-bg.jpg'); 
+      }
+    }
   }
 
   .negative-outcome {
-    background-image: url('@{images}/ca-landing-bg.jpg');
+    background-image: url('@{images}/cultural_adjustment/landing-bg.jpg');
     button {
       &.circle {
         &.good-job {          

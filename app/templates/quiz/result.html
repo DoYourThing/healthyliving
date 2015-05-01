@@ -1,18 +1,36 @@
 
-<section class="landing">
+<section class="result">
   
   <header>
-    <h1>Cultural Adjustment</h1>
+    <h1>Stress quiz</h1>
     <button ng-click="home()" class="back btn">HOME</button>
     <!-- <a href="#" id="home-btn" class="home btn">HOME</a> -->
   </header>
  
-  <div class="description">
-    <span>Cultural Adjustment can be understood as an ongoing process of acclimation to a culture distinct from the one you are used to. If you are new to Canada you will experience differences in the type of food, social interactions, sleeping accommodations, language, clothing and routine that you are accustomed to. It is going to take time to adjust. Perhaps you have just moved away from home or are a mature student coming to school for the first time, whatever your situation - it will take time to adjust. Be patient with yourself, and reach out for help when you need it.</span>
+  <div class="result-text">
+    <h3><span class="bold smaller">You scored {{score}} out of 80.</span></h3>
+    
+    <div ng-if="score <= 30">
+      <div class="emoticon meh"></div>      
+      <span>Chances are you are non-productive or your life lacks stimulation.</span>
+    </div>
+    <div ng-if="score > 30 && score <= 50">
+      <div class="emoticon happy"></div>      
+      <span >You have a good balance in your ability to handle and control stress.</span>
+    </div>
+    <div ng-if="score > 50 && score <= 60">
+      <div class="emoticon serious"></div>      
+      <span>Your stress level is marginal and you are bordering on being excessively tense.</span>
+    </div>
+    <div ng-if="score > 60">
+      <div class="emoticon sad circle"></div>    
+      <span>You may be a candidate for heart disease.</span>
+    </div>
+    <p><span class="small">To learn how to cope with stress, click "Next" below.</span></p>
   </div>
 
   <footer> 
-    <button ng-click="goto('/cultural_adjustment/scenario')" class="next circle">Next</button>
+    <button ng-click="goto('/stress/multi-choice')" class="next circle">Next</button>
   </footer>
 
 </section>

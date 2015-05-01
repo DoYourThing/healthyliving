@@ -10,14 +10,10 @@
   
   header {
   
-    h1{ 
-      background-color: @accent;
-    }
+    h1{ background-color: @accent; }
   } 
   
-  .landing {
-    background-image: url('@{images}/fitness/landing-bg.jpg');
-  }
+  .landing { background-image: url('@{images}/fitness/landing-bg.jpg'); }
   
   .scenario { 
     background-image: url("@{images}/fitness/scenario-bg.jpg"); 
@@ -26,9 +22,7 @@
         width: 463px;
         max-width: 100%;
         
-        @media @smartphones {
-          width: 193px;
-        }
+        @media @smartphones { width: 193px; }
         
         span {
           width: auto;
@@ -36,16 +30,12 @@
           display: inline-block;
         }
         
-        .question-mark {    
-          background-color: @accent;
-        }
+        .question-mark { background-color: @accent; }
     }
 
     .answer {     
       
-      &.yes {
-        text-align: center;
-      }
+      &.yes { text-align: center; }
 
       &:hover {
         
@@ -80,15 +70,49 @@
 
   .info {
     background-image: url('@{images}/fitness/landing-bg.jpg');
-
-    // &.home-exercise { background-image: '@{images}/fitness/home-exercise-bg.jpg'; }
-    // &.join-a-gym { background-image: '@{images}/fitness/join-a-gym-bg.jpg'; }
-    // &.join-a-recreation-league { background-image: '@{images}/fitness/join-a-recreation-league-bg.jpg'; }
-    // &.run { background-image: '@{images}/fitness/run.jpg'; }
-    // &.walk-bike { background-image: '@{images}/fitness/walk-bike.jpg'; }
+    
+    &.home-exercise { 
+      background-image: url('@{images}/fitness/home-exercise-bg.jpg'); 
+    
+      @media @smartphones { background-image: url('@{images}/fitness/mobile/home-exercise-bg.jpg'); }
+    }
+    
+    &.join-a-gym { 
+      background-image: url('@{images}/fitness/join-a-gym-bg.jpg'); 
+    
+      @media @smartphones { background-image: url('@{images}/fitness/mobile/join-a-gym-bg.jpg'); }
+    }
+    
+    &.join-a-recreation-league { 
+      background-image: url('@{images}/fitness/join-a-recreation-league-bg.jpg'); 
+    
+      @media @smartphones { background-image: url('@{images}/fitness/mobile/join-a-recreation-league-bg.jpg'); }
+    }
+    
+    &.run { 
+      background-image: url('@{images}/fitness/run-bg.jpg'); 
+    
+      @media @smartphones {
+        background-image: url('@{images}/fitness/mobile/run-bg.jpg'); 
+      }
+    }
+    
+    &.walk-bike { 
+      background-image: url('@{images}/fitness/walk-bike-bg.jpg'); 
+    
+      @media @smartphones {    background-image: url('@{images}/fitness/mobile/walk-bike-bg.jpg'); }
+    }
+    
+    &.yoga { 
+      background-image: url('@{images}/fitness/yoga-bg.jpg'); 
+      
+      @media @smartphones { background-image: url('@{images}/fitness/mobile/yoga-bg.jpg'); }
+    }
 
     button {
+      
       &.circle {
+      
         &.good-job {          
           background-color: @accent;
           color: #ffffff;
@@ -104,8 +128,11 @@
 
   .negative-outcome {
     background-image: url('@{images}/ca-landing-bg.jpg');
+    
     button {
+      
       &.circle {
+      
         &.good-job {          
           background-color: @accent;
           color: #ffffff;

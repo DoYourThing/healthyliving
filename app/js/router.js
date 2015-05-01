@@ -6,7 +6,7 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider, $locat
   $stateProvider.state('home', {
     url: '/home',
     templateUrl: 'home.html',
-    controller: 'HomeController'
+    controller: 'SectionController'
   });
   
 
@@ -287,6 +287,11 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider, $locat
     templateUrl: 'quiz/landing.html',
   });
 
+  $stateProvider.state('quiz.result', {
+    url: '/result',
+    templateUrl: 'quiz/result.html',
+  });
+
   $stateProvider.state('quiz.question', {
     url: '/:id',
     templateUrl: "quiz/question.html",
@@ -354,58 +359,3 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider, $locat
   $urlRouterProvider.otherwise('/home');
 
 });
-// angular.module("app").config(function($routeProvider, $locationProvider) {
-
-//   $locationProvider.html5Mode({enabled:true});
-
-//   $routeProvider.when('/login', {
-//     templateUrl: 'login.html',
-//     controller: 'LoginController'
-//   });
-
-//   $routeProvider.when('/home', {
-//     templateUrl: 'home.html',
-//     controller: 'HomeController'
-//   });
-
-//   $routeProvider.when('/$resource/list-of-books', {
-//     templateUrl: 'books_resource.html',
-//     controller: 'BooksResourceController'
-//   });
-
-//   $routeProvider.when('/$http/list-of-books', {
-//     templateUrl: 'books_http.html',
-//     controller: 'BooksHttpController',
-//     resolve: {
-//       books: function(BookService) {
-//         return BookService.getBooks();
-//       }
-//     }
-//   });
-
-//   $routeProvider.otherwise({ redirectTo: '/login' });
-
-// });
-
-
-  // $stateProvider.state('cards', {
-  //   url: "/cards",
-  //   templateUrl: "cards.html",
-  //   controller: "CardsController",
-  //   resolve: {
-  //     cardsResponse: function($http) {
-  //       return $http.get("/api/cards");
-  //     }
-  //   }
-  // });
-
-  // $stateProvider.state('cards.detail', {
-  //   url: '/:id',
-  //   templateUrl: "detail.html",
-  //   controller: "DetailViewController",
-  //   onEnter: function($stateParams) {
-  //     console.log($stateParams.id);
-  //   }
-  // });
-
-
