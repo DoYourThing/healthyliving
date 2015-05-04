@@ -29,6 +29,35 @@ angular.module("app").factory('ProgressTracker', function($http) {
 
   var Tracker = {
 
+    getGrade: function(per) {
+      // 94, 86, 78, 70, 62, 54
+      var grade = "NA";
+      
+      if(per === 100) {
+        grade = "A+";
+      } else if(per >= 94) {
+        grade = "A";
+      } else if(per >= 87) {
+        grade = "B+";
+      } else if(per >= 84) {
+        grade = "B";
+      } else if(per >= 80) {
+        grade = "B-";
+      } else if(per >= 77) {
+        grade = "C+";
+      } else if(per >= 70) {
+        grade = "C-";
+      } else if(per >= 64) {
+        grade = "D";
+      } else if(per >= 60) {
+        grade = "D-";
+      } else {
+        grade = "F";
+      }
+      
+      return grade;
+    },
+
     getHistory: function() {
       return history;
     },
@@ -47,8 +76,8 @@ angular.module("app").factory('ProgressTracker', function($http) {
       _.each(_pillars.order, function(pillarID) {
         
         if(_pillars[pillarID] != null) {
-          //if you passed the pillar, get 16 percent, otherwise get 10 - if you fail all you get a D-
-          per = _pillars[pillarID] === 'completed' ? per + 16 : per + 10;
+          //if you passed the pillar, get 16 percent, otherwise get 10 - if you fail all you get a F
+          per = _pillars[pillarID] === 'completed' ? per + 17 : per + 9;
         }
       });
         
@@ -58,7 +87,12 @@ angular.module("app").factory('ProgressTracker', function($http) {
 
       _percent = per;
     },
-
+    
+    hasCompletedAllPillars: function() {
+      var currentIndex = _pillars.order.indexOf(_pillars.current);
+      return _pillars[_pillars.current] != null && currentIndex >= _pillars.order.length -1; //returns true if completed       
+    },
+    
     setView : function(currentView, previousView) {
         $scope.data.previousViews.push(previousView);
         $scope.data.view = currentView;
@@ -72,25 +106,37 @@ angular.module("app").factory('ProgressTracker', function($http) {
       return _pillars.current;
     },
     
+    canGotoPillar: function(pillarID) {
+      // it's considered active if 
+      var isCompleted = _pillars[pillarID] != null;
+      if(isCompleted) {
+        return true;
+      }
+
+      // or it's the current pillar
+      var currentIndex = _pillars.order.indexOf(_pillars.current);
+      return _pillars.order.indexOf(pillarID) === currentIndex;
+    },
+
     isPillarActive: function(pillarID) {
       
       // if the first time, set to the first pillar
       if(_pillars.current === null) {
         _pillars.current = _pillars.order[0];
       }
-
+      
+    
       var currentIndex = _pillars.order.indexOf(_pillars.current);
-      var isCurrentCompleted = _pillars[_pillars.current] != null; //returns true if completed 
-      var activeIndex = isCurrentCompleted ? currentIndex + 1 : currentIndex;
+      // var isCurrentCompleted = _pillars[_pillars.current] != null; //returns true if completed 
+      //var activeIndex = isCurrentCompleted ? currentIndex + 1 : currentIndex;
 
       // console.log('_pillars[_pillars.current] '+ _pillars[_pillars.current] +' is current completed: '+isCurrentCompleted);
       // console.log(pillarID+' '+currentIndex+'; _pillars.order.indexOf(pillarID): '+_pillars.order.indexOf(pillarID));
       // console.log('ACTIVE INDEX: '+activeIndex);
-      return _pillars.order.indexOf(pillarID) === activeIndex;
+      return _pillars.order.indexOf(pillarID) === currentIndex;
     },
 
     setCurrentPillar: function(pillarID){
-      console.log('setting current pillar: '+pillarID);
       _pillars.current = pillarID;
     },
 
@@ -98,6 +144,12 @@ angular.module("app").factory('ProgressTracker', function($http) {
       
       _pillars[_pillars.current] = failed ? 'failed' : 'completed';      
       this.updatePercent();
+      
+      //update to new pillar
+      var currentIndex = _pillars.order.indexOf(_pillars.current);
+      if( currentIndex + 1 < _pillars.order.length) {
+        _pillars.current =   _pillars.order[currentIndex + 1];
+      }
     },
 
     getPillars: function(){

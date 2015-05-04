@@ -16,7 +16,7 @@
     width: 80%;
     margin: auto;
     margin-top: 50px;
-    // text-align: center;
+    
     span {
       font-size: 1em;
     }
@@ -25,54 +25,41 @@
   .choices-wrap {
     display: table;
     margin: 20px auto;
-    //width: 80%;
-    @smartphones {
+    
+    @media @smartphones {
       width: 100%;
     }
+
     ul.choices {
       width: auto;
       margin: auto;
       padding: 0;
       overflow: hidden;
       list-style: none;
-      &.five {
-        li {
-          //width: 20%;
-        }
-      }
+      
+      @media @smartphones { width: 246px; }
+
       &.four {
         width: 710px;
 
         @media screen and (max-width: 800px){
           width: 270px;
+
+          
           li {
             margin-left: 5px;
             margin-right: 5px;
           }
         }
-
-        li {
-         // width: 25%;
-
-         
-        }
       }
-      &.six {
-        li {
-          //width: 16.6%;
-        }
-      }
+      
       li {
         list-style: none;
         float: left;
         width: auto;      
         width: 15%;
-        /* clear: inherit; */      
         display: table;
-        // margin-left: 10px;
 
-       
-        
         button {
           color: @accent;
           font-family: @sans;                 
@@ -89,17 +76,20 @@
         }
 
         @media @smartphones {
-          width: 125px;
-          display: inline;
-          
+          width: 108px;
           height: 133px;
           float: left;
+          display: inline;
           transform: scale(.75);  
-          transform-origin: 0;
-          button {
-            
-            margin: 0;
-          }
+          -webkit-transform: scale(.75);  
+          -ms-transform: scale(.75);  
+          transform-origin: top left;
+          margin-right: 5px;
+          margin-left: 5px;
+
+          &.last { margin-left: 25%; }
+
+          button { margin: 0; }
         }
 
       }

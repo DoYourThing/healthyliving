@@ -29,7 +29,10 @@ angular.module("app").controller('QuizController', function($scope, $location, $
     $scope.currentQuestionIndex = parseFloat($state.params.id);
     $scope.question = $scope.questions[$scope.currentQuestionIndex];
     $scope.score = QuizTracker.getScore();    
-  
+    // remove focus on all elements 
+    if (document.activeElement !== document.body) {
+      document.activeElement.blur();
+    }
   });
 
   var onLogoutSuccess = function(response) {
@@ -102,6 +105,9 @@ angular.module("app").controller('QuizController', function($scope, $location, $
   $scope.goto = function(path) {
     // console.log('GOTO: '+ProgressTracker.getCurrentPillar());
     window.scrollTo(0, 0);
+    if (document.activeElement !== document.body) {
+      document.activeElement.blur();
+    }
     //TODO - manage history - might take a refactor
   	$location.path(path);
   };

@@ -17,10 +17,10 @@
     margin: 0;
   }
   .fg, .percentage {
-    -webkit-transition: all 750ms ease-out;
-    -moz-transition: all 750ms ease-out;
-    -o-transition: all 750ms ease-out;
-    transition: all 750ms ease-out;
+    -webkit-transition: all 750ms ease-out 2s;
+    -moz-transition: all 750ms ease-out 2s;
+    -o-transition: all 750ms ease-out 2s;
+    transition: all 750ms ease-out 2s;
   }
 
   #heading { 
@@ -47,6 +47,63 @@
 
   .logo img {
     width: 100%;
+  }
+  .circle {
+    font-family: 'Abril Fatface', cursive;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    font-size: 63px;
+    text-align: center;
+    line-height: 125px;
+    margin-bottom: 12px;
+    color: #ffffff;  
+    
+    &.grade {   
+      width: 1.5em;
+      height: 1.5em;      
+      line-height: 1.5em;
+      letter-spacing: -.1em;    
+      position: absolute;
+      margin-left: -1.75em;
+      margin-top: -.25em;
+      font-size: 3em;
+      background-color: #000000;
+    }  
+
+    &.try-again {
+      font-size: 2em;
+      width: 3.75em;
+      height: 3.75em;
+      line-height: 1em;
+      color: #000000;
+      margin-top: 50px;
+
+      &:hover {
+        background-color: #000;
+        color: #fff;
+      }
+    }
+    /* width and height can be anything, as long as they're equal */
+  }
+
+
+  .fg.completed {
+    background-color: #000000;
+  }
+  
+  .finished {
+    width: 60%;
+    margin: auto;
+    font-size: 1.75em;
+    margin-top: -58px;
+    
+    p {
+      span {
+        font-size: .75em;
+      }
+    }
   }
 
   #pillars {
@@ -83,6 +140,12 @@
 
       &.completed {
         opacity: .5;
+        cursor: pointer;
+        
+        &:hover {
+          opacity: 1;
+        }
+        
       }
 
       &.active {
@@ -108,19 +171,19 @@
         margin-left: -13px;
       }
 
-      .circle {
-        font-family: 'Abril Fatface', cursive;
-        border-radius: 50%;
-        width: 100%;
-        height: 100%;
-        background-color: #ffffff;
-        font-size: 63px;
-        text-align: center;
-        line-height: 125px;
-        margin-bottom: 12px;
-        color: #ffffff;  
-        /* width and height can be anything, as long as they're equal */
-      }
+      // .circle {
+      //   font-family: 'Abril Fatface', cursive;
+      //   border-radius: 50%;
+      //   width: 100%;
+      //   height: 100%;
+      //   background-color: #ffffff;
+      //   font-size: 63px;
+      //   text-align: center;
+      //   line-height: 125px;
+      //   margin-bottom: 12px;
+      //   color: #ffffff;  
+      //   /* width and height can be anything, as long as they're equal */
+      // }
 
       &.cultural_adjustment
       {
@@ -218,9 +281,9 @@
     }
   }
 
-  @status-bar-color: @accent;
+  @status-bar-color: #000000;
   
-  footer {
+  #home-footer {
     position: relative;
     clear: both;
     width: 550px;
@@ -243,7 +306,7 @@
       }
 
       .bg {
-        width: 100%;
+        width: ~"calc(100% + 4px)";
         height: 100%;
         border-radius: 20px;
         background-color: #ffffff; /*rgba(0,0,0,.5);*/
@@ -292,6 +355,69 @@
       }
 
     }
+
+
+    &.Aplus {
+      .circle.grade, #status-bar .fg {
+        background-color: @alg-green;
+      }
+      #status-bar .percentage { color: @alg-green; }
+      
+    }
+
+    &.A {
+      
+      .circle.grade, #status-bar .fg {
+        background-color: @alg-turq;
+      }
+      
+      #status-bar .percentage { color: @alg-turq; }
+    }
+
+    &.Bplus {
+      
+      .circle.grade, #status-bar .fg {
+        background-color: @alg-blue;
+      }
+      
+      #status-bar .percentage { color: @alg-blue; }
+    }
+    &.Bminus {
+      
+      .circle.grade, #status-bar .fg {
+        background-color: @alg-blue;
+      }
+      
+      #status-bar .percentage { color: @alg-blue; }
+    }
+
+    &.C {
+    
+      .circle.grade, #status-bar .fg {
+        background-color: @alg-yellow;
+      }
+      
+      #status-bar .percentage { color: @alg-yellow; }
+    }
+    
+    &.D {
+    
+      .circle.grade, #status-bar .fg {
+        background-color: @alg-yellow;
+      }
+
+      #status-bar .percentage { color: @alg-yellow; }
+    
+    }
+
+    &.Dminus {
+      .circle.grade, #status-bar .fg {
+        background-color: @orange;
+      }
+      #status-bar .percentage { color: @orange; }
+    }
+
+
   }
 
   @media @smartphones {
@@ -327,6 +453,8 @@
           transform: scale(0.7);
           opacity: 1;
         }
+
+
       }
     }
 

@@ -8,3 +8,4 @@ angular.module("app", ["ui.router", "ngAnimate"]).run(function($rootScope, $stat
     alert(thing);
   };
 });
+

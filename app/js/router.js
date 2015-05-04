@@ -6,7 +6,7 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider, $locat
   $stateProvider.state('home', {
     url: '/home',
     templateUrl: 'home.html',
-    controller: 'SectionController'
+    controller: 'MainController'
   });
   
 
@@ -17,7 +17,7 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider, $locat
   $stateProvider.state('cultural_adjustment', {
     url: '/cultural_adjustment',
     templateUrl: 'cultural_adjustment/base.html',
-    controller: 'SectionController'
+    controller: 'MainController'
   });
   
   $stateProvider.state('cultural_adjustment.landing', {
@@ -74,7 +74,7 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider, $locat
   $stateProvider.state('nutrition', {
     url: '/nutrition',
     templateUrl: 'nutrition/base.html',
-    controller: 'SectionController'
+    controller: 'MainController'
   });
   
   $stateProvider.state('nutrition.landing', {
@@ -123,7 +123,7 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider, $locat
   $stateProvider.state('fitness', {
     url: '/fitness',
     templateUrl: 'fitness/base.html',
-    controller: 'SectionController'
+    controller: 'MainController'
   });
   
   $stateProvider.state('fitness.landing', {
@@ -172,7 +172,7 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider, $locat
   $stateProvider.state('relationships', {
     url: '/relationships',
     templateUrl: 'relationships/base.html',
-    controller: 'SectionController'
+    controller: 'MainController'
   });
   
   $stateProvider.state('relationships.landing', {
@@ -223,7 +223,7 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider, $locat
   $stateProvider.state('stress', {
     url: '/stress',
     templateUrl: 'stress/base.html',
-    controller: 'SectionController'
+    controller: 'MainController'
   });
   
   $stateProvider.state('stress.landing', {
@@ -307,7 +307,7 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider, $locat
   $stateProvider.state('self_care', {
     url: '/self_care',
     templateUrl: 'self_care/base.html',
-    controller: 'SectionController'
+    controller: 'MainController'
   });
   
   $stateProvider.state('self_care.landing', {

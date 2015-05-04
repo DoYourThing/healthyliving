@@ -22,7 +22,10 @@
   
   .scenario { 
     background-image: url("@{images}/self_care/scenario-bg.jpg"); 
-
+    
+    @media @smartphones {
+      background-image: url("@{images}/self_care/mobile/scenario-bg.jpg"); 
+    }
     .question { 
    
         .question-mark {    
@@ -69,9 +72,27 @@
   .info {
     background-image: url('@{images}/self_care/landing-bg.jpg');
     &.nutrition  { background-image: url('@{images}/self_care/nutrition-bg.jpg'); }
-    &.reward  { background-image: url('@{images}/self_care/reward-bg.jpg'); }
-    &.sleep  { background-image: url('@{images}/self_care/sleep-bg.jpg'); }
+    &.reward  { 
+      background-image: url('@{images}/self_care/reward-bg.jpg'); 
 
+      @media @smartphones {
+        background-image: url('@{images}/self_care/mobile/reward-bg.jpg'); 
+      }
+    }
+    &.sleep  { 
+      background-image: url('@{images}/self_care/sleep-bg.jpg'); 
+
+      @media @smartphones {
+        background-image: url('@{images}/self_care/mobile/sleep-bg.jpg'); 
+      }
+    }
+    &.physical-activity  { 
+      
+      @media @smartphones {
+        background-image: url('@{images}/self_care/mobile/physical-activity-bg.jpg');   
+      }
+      background-image: url('@{images}/self_care/physical-activity-bg.jpg'); 
+    }
     button {
       &.circle {
         &.good-job {          

@@ -1,11 +1,32 @@
-<div id="home" ui-view>
+<div ng-switch="isLoading" ui-view >
+
+  <!-- BEGIN: Loading View. -->
+  <div ng-switch-when="true" class="loading-view">
+    <h3>LOADING, PLEASE WAIT</h3>
+    <div class="logo">
+      <a href="http://www.algonquincollege.com" target="_blank"><img src="img/algonquin-college-logo@2x.png"></a>
+    </div>
+    <div id="loading-bar" > 
+      <div class="bg"></div>                  
+      <div class="fg"  ng-class="{'completed': showFinish}"  ng-style="fgWidth"></div> 
+      <div class="percentage" ng-class="{'completed': showFinish}"  ng-style="percentageLeft">{{percentLoaded}}%</div>
+      
+    </div>
+  </div>
+  <!-- END: Loading View. -->
+
+  <!-- BEGIN: Home View. -->   
+  <div  id="home"         
+        ng-switch-when="false"
+        ng-switch="isSuccessful">
+
       <header>
         <h1 id="heading">Healthy Living &amp; Student Life</h1>
         <div class="logo">
           <a href="http://www.algonquincollege.com" target="_blank"><img src="img/algonquin-college-logo@2x.png"></a>
         </div>
       </header>
-      <nav id="pillars">
+      <nav id="pillars" ng-if="!showFinish">
         <div class="pillar left cultural_adjustment" ng-class="{'completed': pillars.cultural_adjustment, 'active': isPillarActive('cultural_adjustment')}" ng-click="gotoPillar('cultural_adjustment')">         
           <div class="circle ">C/A</div>
           <span>CULTURAL</span>
@@ -32,13 +53,61 @@
           <span>SELF CARE</span>
         </div>
       </nav>
-
-      <footer>
-        <div id="status-bar" class={{currentPillarID}} > 
-          <div class="bg"></div>        
-          <div class="fg" ng-style="fgWidth"></div>          
-          <div class="percentage"  ng-style="percentageLeft">{{percentComplete}}%</div>
+     
+      <div class="finished" ng-if="showFinish">
+        <div class="result" ng-if="grade === 'A+'">          
+          <h3><span>Congratulations, you're done!</span></h3>
+          <p><span>You scored perfectly! You are prepared for living a healthy student lifestyle.</span></p>          
         </div>
+        <div class="result" ng-if="grade === 'A'">          
+          <h3><span>Congratulations, you're done!</span></h3>
+          <p><span>You did pretty well, but you chose poorly on one scenario.</span></p>          
+        </div>
+        <div class="result" ng-if="grade === 'B+'">        
+          <h3><span>Congratulations, you're done!</span></h3>
+          <p><span>You did OK, but you can do better!</span></p>
+        </div>
+        <div class="result" ng-if="grade === 'B'">          
+          <h3><span>Congratulations, you're done!</span></h3>
+          <p><span>You did OK, but you can do better!</span></p>        
+        </div>
+        <div class="result" ng-if="grade === 'C'">          
+          <h3><span>Congratulations, you're done!</span></h3>
+          <p><span>You did OK, but you can do better!</span></p>
+        </div>
+        <div class="result" ng-if="grade === 'C-'">          
+          <h3><span>Congratulations, you're done!</span></h3>
+          <p><span>You did OK, but you can do better!</span></p>
+        </div>
+        <div class="result" ng-if="grade === 'D'">          
+          <h3><span>Congratulations, you're done!</span></h3>
+          <p><span>You did OK, but you can do better!</span></p>
+        </div>
+         <div class="result" ng-if="grade === 'D-'">          
+          <h3><span>Congratulations, you're done!</span></h3>
+          <p><span>You didn't do so well, you only chose wisely in one scenario.</span></p>
+        </div>
+        <div class="result" ng-if="grade === 'F'">
+          <h3><span>Congratulations, you're done!</span></h3>
+          <p><span>You didn't choose wisely in any scenario. We think you can do better this time.</span></p>
+        </div>
+      </div>
+
+      <footer id="home-footer" ng-class="{'completed': showFinish, {{gradeClass}}: showFinish}" >
+        <div class="circle grade {{gradeClass}}" ng-if="showFinish">{{grade}}</div>
+        <div id="status-bar" class={{currentPillarID}} > 
+          <div class="bg"></div>                  
+          <div class="fg"  ng-class="{'completed': showFinish}"  ng-style="fgWidth"></div> 
+          <div class="percentage" ng-class="{'completed': showFinish}"  ng-style="percentageLeft">{{percentComplete}}%</div>
+          
+        </div>
+        <button class="circle try-again" ng-click="startOver()" ng-if="showFinish">Try Again</button>
       </footer>
 
-    </div>
+  </div>
+
+
+
+  <!-- END: Home View. -->
+
+  </div>
