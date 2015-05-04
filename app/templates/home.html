@@ -1,7 +1,7 @@
 <div ng-switch="isLoading" ui-view >
 
   <!-- BEGIN: Loading View. -->
-  <div ng-switch-when="true" class="loading-view">
+ <!--  <div ng-switch-when="true" class="loading-view">
     <h3>LOADING, PLEASE WAIT</h3>
     <div class="logo">
       <a href="http://www.algonquincollege.com" target="_blank"><img src="img/algonquin-college-logo@2x.png"></a>
@@ -12,13 +12,12 @@
       <div class="percentage" ng-class="{'completed': showFinish}"  ng-style="percentageLeft">{{percentLoaded}}%</div>
       
     </div>
-  </div>
+  </div> -->
   <!-- END: Loading View. -->
 
   <!-- BEGIN: Home View. -->   
-  <div  id="home"         
-        ng-switch-when="false"
-        ng-switch="isSuccessful">
+  <!-- <div id="home" ng-switch-when="false" ng-switch="isSuccessful"> -->
+  <div id="home" >
 
       <header>
         <h1 id="heading">Healthy Living &amp; Student Life</h1>

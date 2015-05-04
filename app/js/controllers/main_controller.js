@@ -53,8 +53,10 @@ angular.module("app").controller('MainController', function($scope, $location, P
   $scope.pillars = ProgressTracker.getPillars();
   $scope.isPillarActive = ProgressTracker.isPillarActive;
   $scope.percentComplete = ProgressTracker.getPercentComplete();
-  $scope.fgWidth = {width:$scope.percentComplete+'%'};
-  $scope.percentageLeft = {left:'calc('+$scope.percentComplete+'% + 5px)'};
+  // if the percent is in the 90s we round down because the text will overlap out of the bar
+  var perWidth = $scope.percentComplete > 90 && $scope.percentComplete < 100 ? 90 : $scope.percentComplete;
+  $scope.fgWidth = {width:perWidth+'%'};
+  $scope.percentageLeft = {left:'calc('+perWidth+'% + 5px)'};
   $scope.grade = ProgressTracker.getGrade($scope.percentComplete);
   $scope.gradeClass = $scope.grade.split('+').join('plus').split('-').join('minus');
   $scope.currentPillarID = $scope.pillars.current;
