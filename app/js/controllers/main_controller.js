@@ -66,6 +66,15 @@ angular.module("app").controller('MainController', function($scope, $location, P
   $scope.isLoading = true;
   $scope.isSuccessful = false;
   $scope.percentLoaded = 0;
+  
+  //iphone button fix attempt;
+  setTimeout(function(){
+    $('.circle').blur();
+    $('#wrap').focus();
+  }, 500);
+  
+  // remove loading class, attempt at "preload"
+  setTimeout(function(){$('#wrap').removeClass('loading');}, 1000);
 
   // I am the image SRC values to preload and display./
   // --

@@ -1,11 +1,20 @@
+.loading [ui-view] {
+  opacity: 0;
+ 
+}
 #home {
+  opacity: 1;
   background: url("@{images}/main-bg.jpg") no-repeat center;
   background-size: cover;
   // height: 92%;
   // width: 96%;
   // position: absolute;
   // margin: 2%;
-  
+  -webkit-transition: all 750ms ease-out;
+  -moz-transition: all 750ms ease-out;
+  -o-transition: all 750ms ease-out;
+  transition: all 750ms ease-out;
+
   height: ~"calc(100vh - 40px)";
   width: ~"calc(101vw - 40px)";
   position: absolute;

@@ -33,6 +33,10 @@ angular.module("app").controller('QuizController', function($scope, $location, $
     if (document.activeElement !== document.body) {
       document.activeElement.blur();
     }
+    setTimeout(function(){
+      $('.circle').blur();
+      $('#wrap').focus();
+    }, 500);
   });
 
   var onLogoutSuccess = function(response) {
@@ -108,8 +112,14 @@ angular.module("app").controller('QuizController', function($scope, $location, $
     if (document.activeElement !== document.body) {
       document.activeElement.blur();
     }
+
+    $('#wrap').focus();
     //TODO - manage history - might take a refactor
   	$location.path(path);
   };
+
+  // remove loading class, attempt at "preload"
+  setTimeout(function(){$('#wrap').removeClass('loading');}, 1000);
+  
 });
 
